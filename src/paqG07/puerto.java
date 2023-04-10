@@ -1,7 +1,7 @@
 package paqG07;
 import paqG07.*;
 public class puerto {
-    public almacen []a = new almacen[3];
+    public almacen[] a = new almacen[3];
 
     public puerto() {
         a[0] = new almacen();
@@ -9,27 +9,24 @@ public class puerto {
         a[2] = new almacen();
     }
 
-    public boolean espacio(int num){
-        if (a[num].p1[9][11].getNumero_identificación()==0 && a[num].p1[0][11].getNumero_identificación()==0 && a[num].p1[2][11].getNumero_identificación()==0 ){
+    public boolean espacio(int num) {
+        if (a[num].p1[9][11].getNumero_identificación() == 0 && a[num].p1[0][11].getNumero_identificación() == 0 && a[num].p1[2][11].getNumero_identificación() == 0) {
             return false;
-        }else return true;
+        } else return true;
     }
-    public  void apila(contenedor c){
-        if (espacio(0)){
+
+    public void apila(contenedor c) {
+        if (espacio(0)) {
             a[0].apilacontenedor(c);
-        }else  if (espacio(1)){
+        } else if (espacio(1)) {
             a[1].apilacontenedor(c);
-        }else if (espacio(2)){
+        } else if (espacio(2)) {
             a[2].apilacontenedor(c);
         }
     }
 
-    public String desapila(int cont, int colum){
-        String desapilado;
-        desapilado = a[cont].muestracontainerbycolumn(colum);
-        a[cont].desapilacontenedor(colum);
+    public String desapila(int hub, int colum) {
+        String desapilado = this.a[hub].desapilacontenedor(colum).toString();
         return desapilado;
     }
-
-
 }

@@ -121,4 +121,16 @@ public class contenedor {
         return numero_identificación == that.numero_identificación;
     }
 
+    public void copiac(contenedor a){
+        this.descripción = a.descripción;
+        this.aduanas = a.aduanas;
+        this.empresa_receptora = a.empresa_receptora;
+        this.estado = a.estado;
+        this.empresa_remitente = a.empresa_remitente;
+        this.peso = a.peso;
+        this.prioridad = a.prioridad;
+        this.país_procedencia = a.país_procedencia;
+        this.numero_identificación = a.numero_identificación;
+    }
+
 }
