@@ -38,34 +38,41 @@ public class almacen {
         return j;
     }
 
-    public void apilacontenedor(contenedor a) {
+    public boolean apilacontenedor(contenedor a) {
         if (a.getPrioridad() == 1) {
             columna = 0;
-            if (fila[columna]!=10) {
-               this.copia(a);
-            }else System.out.println("No se puede introducir otro contenedor de prioridad 1");
-            fila[columna]++;
+            if (fila[columna] != 10) {
+                this.copia(a);
+                fila[columna]++;
+            } else return false;
+
 
         }
         if (a.getPrioridad() == 2) {
             columna = 1;
-            if (fila[columna]!=10) {
+            if (fila[columna] != 10) {
                 this.copia(a);
-            }else System.out.println("No se puede introducir otro contenedor de prioridad 2");
-            fila[columna]++;
-
+                fila[columna]++;
+            } else {
+                columna++;
+                if (fila[columna] != 10) {
+                    this.copia(a);
+                    fila[columna]++;
+                } else return false;
+            }
         }
         if (a.getPrioridad() == 3) {
-            columna = 2;
-            while (fila[columna] == 10) {
+            columna = 3;
+            while (fila[columna] == 10 && columna<11) {
             columna++;
             }
             if (fila[columna]!=10) {
                 this.copia(a);
-            }else System.out.println("No se puede introducir otro contenedor de prioridad 3");
-            fila[columna]++;
+                fila[columna]++;
+            }else return false;
 
         }
+        return true;
         }
         public contenedor desapilacontenedor(int columna){
             contenedor a = new contenedor();
