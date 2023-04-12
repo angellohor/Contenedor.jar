@@ -128,7 +128,7 @@ public class almacen {
     }
 
     public boolean espacioa(){
-        if ((this.fila[0]<10) && (this.fila[2]<10) && (this.fila[11]<10) ){
+        if ((this.fila[0]<10) && (this.fila[2]<10) && (this.fila[9]<10) ){
             return true;
         }else return false;
     }

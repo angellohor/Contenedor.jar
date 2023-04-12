@@ -5,7 +5,7 @@ public class Main {
         contenedor c = new contenedor(1, 12, "remite", "recibe", "españa", 2, true);
         c.setDescripción("descripcion");
         c.setEstado("estado");
-        p1.a[0].apilacontenedor(c);
+        p1.apila(c);
         c = new contenedor(2, 12, "remite", "recibe", "españa", 2, true);
         p1.a[0].apilacontenedor(c);
         c = new contenedor(3, 12, "remite", "recibe", "italia", 2, true);

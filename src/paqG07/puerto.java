@@ -10,8 +10,8 @@ public class puerto {
     }
 
     public boolean espacio(int num) {
-        if (a[num].p1[9][11].getNumero_identificación() == 0 && a[num].p1[0][11].getNumero_identificación() == 0 && a[num].p1[2][11].getNumero_identificación() == 0) {
-            return false;
+        if (a[num].espacioa()){
+            return true;
         } else return true;
     }
 
