@@ -12,10 +12,13 @@ public class almacen {
                 p1[i][a] = new contenedor();
             }
         }
-            fila = new int[10];
+
+            fila = new int[12];
+        for (int i = 0; i < 12; i++) {
+            fila[i] = 0;
+        }
             columna = 0;
             for (int i = 0; i < 10; i++) {
-                fila[i] = 0;
                 for (int a = 0; a < 12; a++) {
                     p1[i][a].setNumero_identificación(0);
                 }
@@ -128,7 +131,7 @@ public class almacen {
     }
 
     public boolean espacioa(){
-        if ((this.fila[0]<10) && (this.fila[2]<10) && (this.fila[9]<10) ){
+        if ((this.fila[0]<10) && (this.fila[2]<10) && (this.fila[11]<10) ){
             return true;
         }else return false;
     }
