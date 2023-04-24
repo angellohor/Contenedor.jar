@@ -1,6 +1,8 @@
 package paqG07;
 
-public class almacen {
+import java.io.Serializable;
+
+public class almacen implements Serializable {
     contenedor[][] p1;
     int []fila;
     int columna;
@@ -25,18 +27,6 @@ public class almacen {
             }
         }
 
-    public String tostrings(){
-        String j="contenedores libres:\n";
-        for (int i = 0; i < 10; i++) {
-            for (int a = 0; a < 12; a++) {
-                if (p1[i][a].getNumero_identificación() == 0) {
-                    j = j + "\tL";
-                } else j = j + "\tO";
-            }
-            j += "\n";
-        }
-        return j;
-    }
 
     public boolean apilacontenedor(contenedor a) {
         if (a.getPrioridad() == 1) {
@@ -92,27 +82,6 @@ public class almacen {
 
 
 
-    public String muestracontainer(int id) {
-
-        int fil=-1;
-        int col=0;
-        for(int i=0;i<10;i++){
-            for(int a=0; a<12;a++){
-                if(id==(p1[i][a].getNumero_identificación())){
-                    fil=i;
-                    col=a;
-
-                }
-            }
-
-        }
-        if(fil==-1){
-            return null;
-        }else {
-            return p1[fil][col].toString();
-        }
-
-    }
     public int cuantosa(String pais){
         int a=0;
         for(int i=0;i<10;i++){
@@ -167,8 +136,8 @@ public class almacen {
 
     public String tostring(){
         String j="<html>contenedores libres:<br>";
-        for (int i = 0; i < 10; i++) {
-            for (int a = 0; a < 12; a++) {
+        for (int i = 9; i >= 0; i--) {
+            for (int a = 0; a <12; a++) {
                 if (p1[i][a].getNumero_identificación() == 0) {
                     j = j + "\tL";
                 } else j = j + "\tO";
@@ -179,4 +148,6 @@ public class almacen {
         System.out.println(j);
         return j;
     }
+
+
 }

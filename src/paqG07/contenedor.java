@@ -1,8 +1,9 @@
 package paqG07;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class contenedor {
+public class contenedor implements Serializable {
     private int numero_identificación;
     private int peso;
     private String descripción;

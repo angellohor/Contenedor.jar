@@ -1,6 +1,9 @@
 package paqG07;
 import paqG07.*;
-public class puerto {
+
+import java.io.Serializable;
+
+public class puerto implements Serializable {
     public almacen[] a = new almacen[3];
 
     public puerto() {
@@ -22,8 +25,24 @@ public class puerto {
         }
     }
 
-    public String desapila(int hub, int colum) {
-        String desapilado = this.a[hub].desapilacontenedor(colum).toString();
+    public contenedor desapila(int hub, int colum) {
+        contenedor desapilado = this.a[hub].desapilacontenedor(colum);
         return desapilado;
     }
+
+    public contenedor muestra(int id){
+        if (a[0].getcontainer(id)!=null) {
+            return a[0].getcontainer(id);
+        }else if (a[1].getcontainer(id)!=null) {
+            return a[1].getcontainer(id);
+        }else if (a[2].getcontainer(id)!=null) {
+            return a[2].getcontainer(id);
+        }else return null;
+    }
+
+    public int countp(String pais){
+        return a[0].cuantosa(pais)+a[1].cuantosa(pais)+a[2].cuantosa(pais);
+    }
+
+
 }
